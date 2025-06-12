@@ -1,27 +1,26 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'ChatGPT MDT 3.5 System'
-description 'Universal MDT Framework v3.5'
-version '3.5'
+author 'Galactic MDT v1.0'
+description 'QBCore MDT v1.0'
+version '3.7'
 
-shared_scripts {
-    'config.lua',
-}
+shared_script 'config.lua'
 
 client_scripts {
-    'client/client.lua'
+    'client.lua'
 }
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-    'server/server.lua'
+    'server.lua'
 }
 
-ui_page 'nui/index.html'
+ui_page 'html/index.html'
 
 files {
-    'nui/index.html',
-    'nui/js/*.js',
-    'nui/skins/*.html',
+    'html/index.html',
+    'html/style.css',
+    'html/script.js',
+    'html/skins/*.html'
 }

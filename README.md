@@ -1,86 +1,101 @@
-# MDT version 1.0 for QBCore Framework
+📟 QBCore MDT v1.0
 
-# only compatable with qbcore or qbox (will need to change things for qbox to work)
+A fully modular, multi-job MDT system for QBCore framework.
 
-## Overview
+🚀 Features
 
-This MDT (Mobile Data Terminal) system supports multiple jobs with customizable skins and permissions.  
-It includes:
+✅ Per-job UI skins (Police, EMS, DOC, DOJ, etc.)
 
-- Arrests, Warrants, Tickets, Court Cases  
-- Penal Code Management (restricted by job grade)  
-- Dynamic MDT creation by ACE permission users  
-- Inventory item requirement (`mdt`) to access MDT  
-- Job-based different MDT UI skins (Police, EMS, DOJ, DOC)  
+✅ Configurable permissions for each job
 
----
+✅ Dynamic SQL auto-installer (no manual SQL setup required)
 
-## Installation
+✅ Required item system (users need mdt_device item)
 
-### 1. Database
+✅ Fully modular file system
 
-- Import `sql/install.sql` into your MySQL database.
+✅ Prepared for future expansion into full warrant, report, ticket, and penal code systems
 
-### 2. Resource Setup
+✅ Server auto-verifies & creates SQL tables on startup
 
-- Place the entire `MDT.Version.1.0` folder inside your server’s `resources` directory.
+🔧 Installation
 
-### 3. Config
+1️ Extract the resourcePlace the extracted galactic_mdt folder into your server's resources/[local]/ folder.
 
-- Open `config.lua` and customize jobs, permissions, and item name (`mdt` by default).
+2️ Add to your server.cfg
 
-### 4. Add MDT Item
+- ensure galactic_mdt
 
-- Ensure the item used to open the MDT (default: `mdt`) exists in your inventory system.
+3️ Run Once
+The resource will automatically verify/create SQL tables on first server start.
 
-### 5. Add to Server.cfg
-- ensure mdt.Version.1.0
+4️ Make sure you have oxmysql properly installed and running.
 
-### 6. Restart your server
-
----
-
-## Usage
-
-- Players with proper jobs and on-duty can open MDT with `/mdt` command if they have the MDT device item.  
-- Admins or ACE permission holders can run `/mdtcreate` to open an NUI to add new MDT jobs dynamically.  
-- MDT UI changes depending on job — Police, EMS, DOJ, DOC, etc.  
-
----
-
-## Permissions
-
-- Permissions to edit penal codes, manage warrants, and court cases are job-based and set in `config.lua`.  
-- Admin MDT creation is ACE permission protected.
-
----
-
-## Troubleshooting
-
-- MDT will not open if the player is not on duty or doesn’t have the MDT device item.  
-- Check your database import if tables do not exist or data isn't saved.  
-- Make sure `qb-core` is installed and updated.  
-- Check console for Lua errors.
-
----
-
-## Customization
-
-- Customize the UI skins in `nui/skins/*.html`.  
-- Modify the arrest report template in `config.lua`.  
-- Add more jobs by the admin NUI or manually in the database.
-
----
-
-## Credits
-
-Developed by Galactic RP  
-Powered by QBCore Framework
-
----
-
-Feel free to contribute and improve!
-
----
+All configuration is located in:
+config.lua
 
 
+Jobs: 
+You can add as many jobs as you want here. Example:
+
+Config.Jobs = {
+    ["police"] = {
+        label = "Police Department",
+        skin = "police",
+        permissions = {
+            ManagePenalCodes = true,
+            ManageWarrants = true,
+            ManageBOLOs = true,
+            ManageReports = true
+        }
+    },
+    ["ems"] = {
+        label = "EMS",
+        skin = "ems",
+        permissions = {
+            ManageReports = true
+        }
+    },
+}
+
+Item Requirement
+
+Users need to have the following item in inventory to access MDT:
+
+Config.MDTItem = "mdt_tablet"
+
+Make sure you add ``mdt_tablet`` to your inventory system.
+
+🖥️ NUI Skins
+Each job has its own separate UI skin stored under:
+
+html/skins/
+You can freely edit these files to customize the appearance per department:
+
+police.html
+
+ems.html
+
+doc.html
+
+doj.html
+
+⚠ Dependencies
+✅ QBCore Framework
+
+✅ oxmysql (oxmysql/lib/MySQL.lua is used)
+
+
+
+
+📅 Stuff Planned for v2.0
+Full NUI-based warrant, bolo, and report system
+
+Dynamic penal code editor
+
+Case linking between BOLOs, reports, and warrants
+
+Admin web panel
+
+👨‍💻 Author
+Galactic RP and its affiliates

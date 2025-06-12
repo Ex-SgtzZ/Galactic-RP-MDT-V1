@@ -1,57 +1,48 @@
 Config = {}
 
--- MDT Item required to access system
-Config.RequiredItem = 'mdt'
+Config.MDTItem = "mdt_tablet"
 
--- Default job MDT permissions (loaded dynamically later from SQL too)
-Config.MDTJobs = {
-    ['police'] = {
+Config.Jobs = {
+    ["police"] = {
         label = "Police Department",
         skin = "police",
-        canEditPenalCodes = true,
-        canManageWarrants = true,
-        canManageCourtCases = true,
+        permissions = {
+            ManagePenalCodes = true,
+            ManageWarrants = true,
+            ManageBOLOs = true,
+            ManageReports = true
+        }
     },
-    ['ems'] = {
-        label = "Medical Services",
+    ["ems"] = {
+        label = "EMS",
         skin = "ems",
-        canEditPenalCodes = false,
-        canManageWarrants = false,
-        canManageCourtCases = false,
+        permissions = {
+            ManageReports = true
+        }
     },
-    ['doj'] = {
+    ["doc"] = {
+        label = "Corrections",
+        skin = "doc",
+        permissions = {
+            ManageWarrants = false,
+            ManageBOLOs = false,
+            ManageReports = true
+        }
+    },
+    ["doj"] = {
         label = "Department of Justice",
         skin = "doj",
-        canEditPenalCodes = true,
-        canManageWarrants = true,
-        canManageCourtCases = true,
-    },
-    ['doc'] = {
-        label = "Department of Corrections",
-        skin = "doc",
-        canEditPenalCodes = false,
-        canManageWarrants = true,
-        canManageCourtCases = false,
-    },
+        permissions = {
+            ManagePenalCodes = true,
+            ManageWarrants = true,
+            ManageBOLOs = true,
+            ManageReports = true
+        }
+    }
 }
 
--- Arrest Report Template
-Config.ArrestTemplate = [[
-ARREST REPORT
-
-Suspect Name: {suspect}
-Date of Arrest: {date}
-Arresting Officer: {officer}
-
-Charges:
-{charges}
-
-Details of Incident:
-{details}
-
-Notes:
-{notes}
-]]
-
--- Warrant expiration in days
-Config.WarrantExpirationDays = 7
+Config.Commands = {
+    openMDT = "mdt",
+    openMDTAdmin = "mdtcreate",
+}
+return Config
