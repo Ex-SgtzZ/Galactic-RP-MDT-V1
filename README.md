@@ -1,6 +1,12 @@
 📟 QBCore MDT v1.0
 
 A fully modular, multi-job MDT system for QBCore framework.
+# ⚠ Dependencies
+    ✅ QBCore Framework
+    
+    ✅ oxmysql (oxmysql/lib/MySQL.lua is used)
+
+
 
 # 🚀 Features
 
@@ -71,12 +77,6 @@ A fully modular, multi-job MDT system for QBCore framework.
 ``doc.html``
 
 ``doj.html``
-
-# ⚠ Dependencies
-    ✅ QBCore Framework
-    
-    ✅ oxmysql (oxmysql/lib/MySQL.lua is used)
-
 
 
 
