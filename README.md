@@ -1,5 +1,7 @@
 # Galactic RP MDT v3.5 for QBCore Framework
 
+# only compatable with qbcore or qbox(will need to change things for qbox to work)
+
 ## Overview
 
 This MDT (Mobile Data Terminal) system supports multiple jobs with customizable skins and permissions.  
