@@ -1,6 +1,6 @@
 # Galactic RP MDT v3.5 for QBCore Framework
 
-# only compatable with qbcore or qbox(will need to change things for qbox to work)
+# only compatable with qbcore or qbox (will need to change things for qbox to work)
 
 ## Overview
 
