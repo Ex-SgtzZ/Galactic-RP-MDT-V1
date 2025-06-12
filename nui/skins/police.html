@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Police MDT</title>
+    <style>
+        body { background: #001F3F; color: white; font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>Police MDT</h1>
+    <p>Arrests, Warrants, Tickets, Penal Codes, Reports</p>
+    <button onclick="closeMDT()">Close MDT</button>
+
+    <script>
+        function closeMDT() {
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST', body: '{}' });
+        }
+    </script>
+</body>
+</html>

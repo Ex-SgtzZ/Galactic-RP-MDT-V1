@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMS MDT</title>
+    <style>
+        body { background: #FF4136; color: white; font-family: Arial, sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>EMS MDT</h1>
+    <p>Medical Patient Reports, Treatment Logs</p>
+    <button onclick="closeMDT()">Close MDT</button>
+
+    <script>
+        function closeMDT() {
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST', body: '{}' });
+        }
+    </script>
+</body>
+</html>
