@@ -1,4 +1,4 @@
-# Galactic RP MDT v3.5 for QBCore Framework
+# MDT version 1.0 for QBCore Framework
 
 # only compatable with qbcore or qbox (will need to change things for qbox to work)
 
@@ -23,7 +23,7 @@ It includes:
 
 ### 2. Resource Setup
 
-- Place the entire `galacticRP_MDT_V3.5` folder inside your server’s `resources` directory.
+- Place the entire `MDT.Version.1.0` folder inside your server’s `resources` directory.
 
 ### 3. Config
 
@@ -34,7 +34,7 @@ It includes:
 - Ensure the item used to open the MDT (default: `mdt`) exists in your inventory system.
 
 ### 5. Add to Server.cfg
-- ensure mdt_v3.5
+- ensure mdt.Version.1.0
 
 ### 6. Restart your server
 
